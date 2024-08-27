@@ -1,6 +1,10 @@
 from typing import Tuple
 from sklearn.model_selection import train_test_split
 import pandas as pd
+from src.utils.helper import logging_process
+import logging
+
+logging_process()
 
 
 def splitting_process(
@@ -25,12 +29,11 @@ def splitting_process(
         X = data.drop([target_col], axis=1)
         y = data[target_col]
 
-        print("===== Start Splitting Data =====")
-        print("")
+        logging.info("===== Start Splitting Data =====")
 
         # before split the data, we check the data shape for features and target
-        print(f"Features Shape: {X.shape}")
-        print(f"Target Shape: {y.shape}")
+        logging.info(f"Features Shape: {X.shape}")
+        logging.info(f"Target Shape: {y.shape}")
 
         SEED = 42
 
@@ -40,16 +43,15 @@ def splitting_process(
 
         # validate the shape for train and test data
 
-        print(f"Train Features Shape: {X_train.shape}")
-        print(f"Test Features Shape: {X_test.shape}")
-        print(f"Train Target Shape: {y_train.shape}")
-        print(f"Test Target Shape: {y_test.shape}")
+        logging.info(f"Train Features Shape: {X_train.shape}")
+        logging.info(f"Test Features Shape: {X_test.shape}")
+        logging.info(f"Train Target Shape: {y_train.shape}")
+        logging.info(f"Test Target Shape: {y_test.shape}")
 
-        print("")
-        print("===== Finished splitting data =====")
+        logging.info("===== Finished splitting data =====")
 
         return X_train, X_test, y_train, y_test
 
     except Exception as e:
-        print("===== Failed to Splitting data =====")
+        logging.error("===== Failed to Splitting data =====")
         raise Exception(e)

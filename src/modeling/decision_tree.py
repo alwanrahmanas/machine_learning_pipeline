@@ -1,6 +1,10 @@
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
+from src.utils.helper import logging_process
+import logging
+
+logging_process()
 
 
 def modeling_process(
@@ -17,7 +21,7 @@ def modeling_process(
     y_test (pd.Series): target for test data
     """
     try:
-        print("===== Start Modeling Data =====\n")
+        logging.info("===== Start Modeling Data =====\n")
         # create decision tree object
         dt_clf = DecisionTreeClassifier()
 
@@ -30,11 +34,11 @@ def modeling_process(
         acc_train = accuracy_score(y_train, y_pred_train)
         acc_test = accuracy_score(y_test, y_pred_test)
 
-        print(f"Decision Tree training accuracy {acc_train}")
-        print(f"Decision Tree test accuracy {acc_test}")
+        logging.info(f"Decision Tree training accuracy {acc_train}")
+        logging.info(f"Decision Tree test accuracy {acc_test}")
         
-        print("===== Finish Modeling Data =====")
+        logging.info("===== Finish Modeling Data =====")
 
     except Exception as e:
-        print("===== Failed Modeling Data =====")
+        logging.error("===== Failed Modeling Data =====")
         raise Exception(e)

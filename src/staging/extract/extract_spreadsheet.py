@@ -1,16 +1,18 @@
 import pandas as pd
 import os
 from dotenv import load_dotenv
-from src.utils.helper import auth_gspread
+from src.utils.helper import auth_gspread, logging_process
+import logging
 
 load_dotenv()
+logging_process()
 
 GS_KEY = os.getenv("GS_KEY")
 
 
 def extract_spreadsheet_process(worksheet_name: str) -> pd.DataFrame:
     try:
-        print("===== Start Extracting Spreadsheet data =====")
+        logging.info("===== Start Extracting Spreadsheet data =====")
         # init gspread engine
         gc = auth_gspread()
         
@@ -31,8 +33,8 @@ def extract_spreadsheet_process(worksheet_name: str) -> pd.DataFrame:
         
         return df_result
         
-        print("===== Finish Extracting Spreadsheet data =====")
+        logging.info("===== Finish Extracting Spreadsheet data =====")
         
     except Exception as e:
-        print("===== Failed to Extract Spreadsheet =====")
+        logging.error("===== Failed to Extract Spreadsheet =====")
         raise Exception(e)

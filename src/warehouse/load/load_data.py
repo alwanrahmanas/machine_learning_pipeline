@@ -1,12 +1,15 @@
 import pandas as pd
-from src.utils.helper import init_engine
+from src.utils.helper import init_engine, logging_process
+import logging
+
+logging_process()
 
 
 def load_to_warehouse(data: pd.DataFrame, table_name: str) -> None:
     try:
         wh_engine = init_engine(engine_name = "warehouse")
         
-        print("===== Start Load to Warehouse Database =====")
+        logging.info("===== Start Load to Warehouse Database =====")
         
         data = data.copy()
         
@@ -15,10 +18,10 @@ def load_to_warehouse(data: pd.DataFrame, table_name: str) -> None:
                     if_exists = "replace",
                     index = False)
         
-        print("===== Finish Load to Warehouse Database =====")
+        logging.info("===== Finish Load to Warehouse Database =====")
     
     except Exception as e:
-        print("===== Failed Load to Warehouse Database =====")
+        logging.error("===== Failed Load to Warehouse Database =====")
         raise Exception(e)
 
     finally:

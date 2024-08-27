@@ -2,11 +2,15 @@ from src.warehouse.transform.process.remove_dot import remove_dot_process
 from src.warehouse.transform.process.filter_balance import filter_balance_process
 from src.warehouse.transform.process.casting_data import casting_data_process
 import pandas as pd
+from src.utils.helper import logging_process
+import logging
+
+logging_process()
 
 
 def transform_process(data: pd.DataFrame) -> pd.DataFrame:
     try:
-        print("===== Start Transform Data ===== \n")
+        logging.info("===== Start Transform Data ===== \n")
 
         # removing dot
         data = remove_dot_process(data = data)
@@ -17,10 +21,10 @@ def transform_process(data: pd.DataFrame) -> pd.DataFrame:
         # casting data type
         data = casting_data_process(data = data)
         
-        print("===== Finish Transform Data =====")
+        logging.info("===== Finish Transform Data =====")
         
         return data
 
     except Exception as e:
-        print("===== Failed Transform Data =====")
+        logging.error("===== Failed Transform Data =====")
         raise Exception(e)

@@ -1,12 +1,15 @@
 import pandas as pd
-from src.utils.helper import init_engine
+from src.utils.helper import init_engine, logging_process
+import logging
+
+logging_process()
 
 
 def load_to_staging(data: pd.DataFrame, table_name: str) -> None:
     try:
         stg_engine = init_engine(engine_name = "staging")
         
-        print("===== Start Load to Staging Database =====")
+        logging.info("===== Start Load to Staging Database =====")
         
         data = data.copy()
         
@@ -15,10 +18,10 @@ def load_to_staging(data: pd.DataFrame, table_name: str) -> None:
                     if_exists = "replace",
                     index = False)
         
-        print("===== Finish Load to Staging Database =====")
+        logging.info("===== Finish Load to Staging Database =====")
     
     except Exception as e:
-        print("===== Failed Load to Staging Database =====")
+        logging.error("===== Failed Load to Staging Database =====")
         raise Exception(e)
 
     finally:
