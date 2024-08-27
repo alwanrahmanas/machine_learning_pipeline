@@ -2,6 +2,5 @@ gspread
 oauth2client
 pandas
 python-dotenv
+scikit_learn
 SQLAlchemy
-gspread-dataframe
-scikit-learn
