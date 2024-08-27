@@ -1,0 +1,7 @@
+gspread
+oauth2client
+pandas
+python-dotenv
+SQLAlchemy
+gspread-dataframe
+scikit-learn
