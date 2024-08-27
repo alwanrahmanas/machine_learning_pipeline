@@ -1,0 +1,19 @@
+CREATE TABLE public.stg_bank_marketing(
+	age int4 NULL,
+	job varchar NULL,
+	marital varchar NULL,
+	education varchar NULL,
+	"default" varchar NULL,
+	balance int4 NULL,
+	housing varchar NULL,
+	loan varchar NULL,
+	contact varchar NULL,
+	"day" int4 NULL,
+	"month" varchar NULL,
+	duration int4 NULL,
+	campaign int4 NULL,
+	pdays int4 NULL,
+	previous int4 NULL,
+	poutcome varchar NULL,
+	deposit varchar NULL
+);
