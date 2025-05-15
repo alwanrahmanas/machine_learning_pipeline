@@ -25,3 +25,63 @@
 2024-08-27 15:27:46,288 - INFO - Decision Tree training accuracy 1.0
 2024-08-27 15:27:46,288 - INFO - Decision Tree test accuracy 0.7766109785202864
 2024-08-27 15:27:46,288 - INFO - ===== Finish Modeling Data =====
+2025-05-14 20:31:13,631 - INFO - ===== Start Extracting Spreadsheet data =====
+2025-05-15 20:04:22,995 - INFO - ===== Start Extracting Spreadsheet data =====
+2025-05-15 20:07:56,693 - INFO - ===== Start Load to Staging Database =====
+2025-05-15 20:07:58,532 - INFO - ===== Finish Load to Staging Database =====
+2025-05-15 20:10:23,279 - INFO - ===== Start Extracting Spreadsheet data =====
+2025-05-15 20:10:31,057 - INFO - ===== Start Load to Staging Database =====
+2025-05-15 20:10:32,549 - INFO - ===== Finish Load to Staging Database =====
+2025-05-15 20:10:44,767 - INFO - ===== Start Extracting data from Staging =====
+2025-05-15 20:10:44,964 - INFO - ===== Finish Extracting data from Staging =====
+2025-05-15 20:12:06,975 - INFO - ===== Start Transform Data ===== 
+
+2025-05-15 20:12:07,038 - INFO - ===== Finish Transform Data =====
+2025-05-15 20:12:21,046 - INFO - ===== Start Load to Warehouse Database =====
+2025-05-15 20:12:22,777 - INFO - ===== Finish Load to Warehouse Database =====
+2025-05-15 20:16:53,069 - INFO - ===== Start Extracting data from Warehouse =====
+2025-05-15 20:16:53,241 - INFO - ===== Finish Extracting data from Warehouse =====
+2025-05-15 20:17:48,224 - INFO - ===== Start Preprocessing Data =====
+2025-05-15 20:17:48,243 - ERROR - ===== Failed Preprocessing Data =====
+2025-05-15 20:18:19,553 - INFO - ===== Start Preprocessing Data =====
+2025-05-15 20:18:19,569 - ERROR - ===== Failed Preprocessing Data =====
+2025-05-15 20:19:32,450 - INFO - ===== Start Extracting data from Warehouse =====
+2025-05-15 20:19:32,570 - INFO - ===== Finish Extracting data from Warehouse =====
+2025-05-15 20:20:12,286 - INFO - ===== Start Preprocessing Data =====
+2025-05-15 20:20:12,296 - ERROR - ===== Failed Preprocessing Data =====
+2025-05-15 20:20:33,672 - INFO - ===== Start Extracting data from Warehouse =====
+2025-05-15 20:20:33,860 - INFO - ===== Finish Extracting data from Warehouse =====
+2025-05-15 20:23:50,764 - INFO - ===== Start Preprocessing Data =====
+2025-05-15 20:23:50,792 - INFO - ===== Failed Preprocessing Data =====
+2025-05-15 20:24:49,802 - INFO - ===== Start Extracting data from Warehouse =====
+2025-05-15 20:24:50,261 - INFO - ===== Finish Extracting data from Warehouse =====
+2025-05-15 20:24:58,514 - INFO - ===== Start Preprocessing Data =====
+2025-05-15 20:24:58,547 - INFO - ===== Failed Preprocessing Data =====
+2025-05-15 20:26:44,067 - INFO - ===== Start Splitting Data =====
+2025-05-15 20:26:44,068 - INFO - Features Shape: (10474, 37)
+2025-05-15 20:26:44,068 - INFO - Target Shape: (10474,)
+2025-05-15 20:26:44,077 - INFO - Train Features Shape: (8379, 37)
+2025-05-15 20:26:44,077 - INFO - Test Features Shape: (2095, 37)
+2025-05-15 20:26:44,077 - INFO - Train Target Shape: (8379,)
+2025-05-15 20:26:44,077 - INFO - Test Target Shape: (2095,)
+2025-05-15 20:26:44,077 - INFO - ===== Finished splitting data =====
+2025-05-15 20:26:46,267 - INFO - ===== Start Modeling Data =====
+
+2025-05-15 20:26:46,375 - INFO - Decision Tree training accuracy 1.0
+2025-05-15 20:26:46,376 - INFO - Decision Tree test accuracy 0.7785202863961814
+2025-05-15 20:26:46,376 - INFO - ===== Finish Modeling Data =====
+2025-05-15 20:27:02,999 - INFO - ===== Start Modeling Data =====
+
+2025-05-15 20:27:03,112 - INFO - Decision Tree training accuracy 1.0
+2025-05-15 20:27:03,112 - INFO - Decision Tree test accuracy 0.7780429594272077
+2025-05-15 20:27:03,112 - INFO - ===== Finish Modeling Data =====
+2025-05-15 20:27:34,467 - INFO - ===== Start Modeling Data =====
+
+2025-05-15 20:27:34,564 - INFO - Decision Tree training accuracy 1.0
+2025-05-15 20:27:34,564 - INFO - Decision Tree test accuracy 0.7780429594272077
+2025-05-15 20:27:34,564 - INFO - ===== Finish Modeling Data =====
+2025-05-15 20:28:11,637 - INFO - ===== Start Modeling Data =====
+
+2025-05-15 20:28:11,794 - INFO - Decision Tree training accuracy 1.0
+2025-05-15 20:28:11,795 - INFO - Decision Tree test accuracy 0.7761336515513126
+2025-05-15 20:28:11,795 - INFO - ===== Finish Modeling Data =====

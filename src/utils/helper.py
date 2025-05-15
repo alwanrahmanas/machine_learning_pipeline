@@ -7,13 +7,15 @@ import gspread
 import logging
 
 
-load_dotenv()
+load_dotenv(override=True)
 
 DB_HOST = os.getenv("DB_HOST")
 DB_USER = os.getenv("DB_USER")
 DB_PASS = os.getenv("DB_PASS")
 DB_WH_BANK = os.getenv("DB_WH_BANK")
 DB_STG_BANK = os.getenv("DB_STG_BANK")
+PORT_STAGING = os.getenv("PORT_STAGING")
+PORT_WAREHOUSE = os.getenv("PORT_WAREHOUSE")
 
 CRED_PATH = os.getenv("CRED_PATH")
 
@@ -21,12 +23,12 @@ CRED_PATH = os.getenv("CRED_PATH")
 def init_engine(engine_name: str):
     try:
         if engine_name.lower() == "staging":
-            conn_stg = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:5436/{DB_STG_BANK}")
+            conn_stg = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{PORT_STAGING}/{DB_STG_BANK}")
             
             return conn_stg
         
         elif engine_name.lower() == "warehouse":
-            conn_wh = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:5437/{DB_WH_BANK}")
+            conn_wh = create_engine(f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{PORT_WAREHOUSE}/{DB_WH_BANK}")
             
             return conn_wh
         
@@ -49,7 +51,20 @@ def auth_gspread():
 
 
 def logging_process():
-    # Configure logging
-    logging.basicConfig(filename = "log/info_process.log",
-                        level=logging.INFO,
-                        format="%(asctime)s - %(levelname)s - %(message)s")
+    if not os.path.exists("log"):
+        os.makedirs("log")
+
+    logging.basicConfig(
+        filename="log/info_process.log",
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s"
+    )
+
+    # Tambahin handler buat tampil di console
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
+    formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+    console.setFormatter(formatter)
+    logging.getLogger().addHandler(console)
+
+

@@ -2,3 +2,9 @@
 .env
 venv/
 creds/
+*.json
+*.csv
+*.db
+*.sqlite
+*.h5    
+*.log

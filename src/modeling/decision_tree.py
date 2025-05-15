@@ -36,6 +36,8 @@ def modeling_process(
 
         logging.info(f"Decision Tree training accuracy {acc_train}")
         logging.info(f"Decision Tree test accuracy {acc_test}")
+        print(f"Decision Tree training accuracy {acc_train}")
+        print(f"Decision Tree test accuracy {acc_test}")
         
         logging.info("===== Finish Modeling Data =====")
 

@@ -4,8 +4,10 @@ from dotenv import load_dotenv
 from src.utils.helper import auth_gspread, logging_process
 import logging
 
-load_dotenv()
+load_dotenv(override=True)
+# Set up logging
 logging_process()
+
 
 GS_KEY = os.getenv("GS_KEY")
 
