@@ -45,15 +45,25 @@ Spreadsheet → Staging DB (PostgreSQL) → Warehouse DB (PostgreSQL) → Machin
 ## Struktur Project
 ```
 machine_learning_pipeline/
-├── src/
+├── log/                         # Log file directory
+│   └── info_process.log
+├── marketing_staging/           # Staging database init scripts
+│   └── init.sql
+├── marketing_warehouse/         # Warehouse database init scripts
+│   └── init.sql
+├── src/                         # Source code modules
 │   ├── staging/
 │   ├── warehouse/
 │   ├── modeling/
-│   ├── utils/
-├── log/
-├── .env
-├── docker-compose.yml
-├── pipeline.py
-└── README.md
+│   └── utils/
+├── .flake8                      # Flake8 linting config
+├── .gitignore                   # Git ignore rules
+├── README.md                    # Project documentation
+├── docker-compose.yml           # Docker Compose config
+├── live_class_week_8.ipynb      # Jupyter notebook for live session
+├── pipeline.py                  # Main pipeline script
+├── requirements.txt             # Python dependencies
+└── tempCodeRunnerFile.py        # Temp file (can be ignored)
+
 
 ```
