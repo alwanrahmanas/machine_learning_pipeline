@@ -43,6 +43,7 @@ Spreadsheet → Staging DB (PostgreSQL) → Warehouse DB (PostgreSQL) → Machin
 ---
 
 ## Struktur Project
+```
 machine_learning_pipeline/
 ├── src/
 │   ├── staging/
@@ -55,3 +56,4 @@ machine_learning_pipeline/
 ├── pipeline.py
 └── README.md
 
+```
